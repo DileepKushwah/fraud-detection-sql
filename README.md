@@ -1,2 +1,30 @@
-# fraud-detection-sql
+# Fraud Detection in E-Commerce (SQL)
+
+## Background
+
 Fraud detection is critical to the financial security of both banks and customers. Data-driven fraud detection reveals fraud patterns that could not be easily discerned with eyeball checking and models such patterns to prevent further losses.
+
+## Datasets
+
+I'm using the [Fraud Detection in E-Commerce Dataset](https://www.kaggle.com/datasets/kevinvagan/fraud-detection-dataset) from Kaggle to demonstrate normalisation, relational modelling, and SQL analyses (including CTE, subqueries, aggregate functions, and window functions.) This happens at the early stage of data modelling where the analyst queries the banking database to extract data.
+
+The above link includes three datasets: Dataset1, Dataset2, and Merged Dataset. I'm only using Dataset1 in this SQL project. The original dataset has *1,472,952* rows, *16* columns. Note that this dataset is synthetic and chosen because descriptive variables are available for SQL demonstration and interpretation.
+
+## Components
+
+- **Python for normalisation**: The `normalisation.ipynb` notebook includes the Python scripts for normalising the selected Kaggle dataset for relational modelling. Steps include exploring the data, subsetting the data, cleaning the data, and exporting database tables. Documentation is available in the notebook for illustrating the thought process.
+
+- **Database creation SQL**: The `database.sql` SQL file includes PostgreSQL queries for creating the relational database consisting of two tables, customers and transactions. These tables share a one-to-many relationship: One customer can make multiple transactions; one transaction should belong to only one customer.
+
+- **SQL analyses and extration**: The `research.sql` SQL file includes all the SQL queries performed in this database, covering CTE, subqueries, aggregate functions, and window functions for answering fraud detection research questions.
+
+Several data samples are available in this repo: 1) `dataset_five.csv`: This is the original dataset, namely Dataset1 from the Kaggle Fraud Detection in E-Commerce Dataset page. 2) `customers_five.csv`: This is the customers table data produced from the Python script. 3) `transactions_five.csv`: This is the transactions table data produced from the Python script. Given GitHub storage limitation, only the first five rows are provided for reference.
+
+
+## Keywords
+
+Fraud Detection, PostgreSQL, Python
+
+## Related Contents
+
+[Bank Account Fraud Detection](https://github.com/mrlizhaozhi/application-fraud-bank-account-opening/): In this fraud detection project, I use the open-source research data released by Feedzai to analyse bank account fraud patterns and develop Logistic Regression and XGBoost models to predict this fraud typology using this labelled data. In addition to the Python programs, a Tableau Publish dashboard, a Model Risk Management and Model Governance documentation and a PowerPoint deck for presenting analytical findings are available in the code repository to demonstrate comprehensive data analytics and modelling skills as well as business acumen in the domain of financial crime risk detection.
